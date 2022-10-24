@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-1: #f4f5f7;
+    --color-2: #eceaf5;
+    --color-o-1: #b6b9f4;
+    --color-o-2: #9b9ff6;
+    --color-o-3: #bfc3f6;
+}
+
+section {
+    height: 100vh;
+}
+
+/* Header */
+#bar {
+    margin: 2rem;
+    margin-right: 3rem;
+}
+
+#bar a {
+    color: black;
+    font-weight: 600;
+    padding-left: 1.5rem;
+}
+/*Social Media */
+#social-media {
+    position: fixed;
+    top: calc(50% - 4rem);
+    left: 10px;
+    font-size: 1.5rem;
+    margin-left: 0;
+}
+
+#social-media a {
+    color: #333;
+}
+
+/*Home*/
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home img {
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    z-index: -1;
+}
+
+#home-info {
+    text-align: center;
+}
+
+#home-info h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#slide-down {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    cursor: pointer;
+    animation: jump-up-and-down 0.8s ease-in-out infinite;
+}
+
+@keyframes jump-up-and-down {
+    0% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    75% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#username {
+    position: absolute;
+    max-width: fit-content;
+    display: inline;
+    top: 0;
+    left: 0;
+}
+
+/*About */
+#about {
+    background-color: var(--color-1);
+}
+
+/*Skills*/
+#skills {
+    background-color: var(--color-2);
+}
+
+/*Works*/
+#work {
+    background-color: var(--color-1);
+}
+
+/*Contact*/
+#contact {
+    background-color: var(--color-2);
+}
+
+/*Footer*/
+footer {
+    background-color: var(--color-2);
+}
+
+h1,
+h2 {
+    font-family: "Poppins", sans-serif;
+}
+
+#username,
+#bar a {
+    font-family: "Roboto Mono", monospace;
+}
+
+#bar a {
+    text-decoration: none;
+}
+
+#nav-bar #bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    list-style-type: none;
+    display: flex;
+}

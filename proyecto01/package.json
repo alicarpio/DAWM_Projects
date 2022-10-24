@@ -1,0 +1,12 @@
+{
+  "name": "proyecto01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "python3 -m http.server 8079"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
