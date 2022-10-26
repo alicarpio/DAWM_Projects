@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "python3 -m http.server 8079"
+    "start": "python3 -m http.server 8099"
   },
   "keywords": [],
   "author": "",

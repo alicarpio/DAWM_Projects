@@ -3,6 +3,11 @@
   <head>
     <title>Alina's profile</title>
 
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
     <!--Font Awesome-->
     <link
       rel="stylesheet"
@@ -80,10 +85,10 @@
       </a>
     </section>
 
+
     <section id="about">
-      <!--TODO agregar sonido-->
-      <h2>About Me</h2>
-      <section>
+      <div id="about-info">
+        <h2>About me</h2>
         <i class="fa-regular fa-message"></i>
         <h2>Alina</h2>
         <p>
@@ -93,22 +98,29 @@
           voluptatem sed iusto nihil nam doloribus voluptas nam labore beatae
           qui dicta consequatur ut maiores mollitia.
         </p>
-        <div id="contact-botton">
-          <div>
-            <a href="#contact">let's talk</a>
+        <div id="contact-container">
+          <div id="contact-botton">
+            <div id="contact-botton-info">
+              <a href="#contact">let's talk</a>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <aside>
-        <img
-          src="public/images/profilePhoto.jpeg"
+      
+      <figure id="profile-image">
+        <div>
+          <img
+          src="./public/images/profilePhoto.jpeg"
           alt="Profile photo"
           width="300"
-          height="325"
-        />
-      </aside>
-      <div class="music-player">
+          height="325 "
+          />
+        </div>
+      </figure>
+    </section>
+    
+      <!-- <div class="music-player">
         <i class="fa-solid fa-volume"
           ><audio controls="yes" autoplay>
             <source
@@ -116,9 +128,8 @@
               type="audio/mpeg"
             /></audio
         ></i>
-      </div>
-    </section>
-
+      </div> -->
+    
     <section id="skills">
       <h2>Skills</h2>
       <div class="card-wrapper">
@@ -194,6 +205,21 @@
       <br />
       <b>Phone: </b><span>+593 960 774 778</span>
       <aside id="form-contact">
+        <table>
+          <th>
+            <td><label for="nombreforms">Your name</label></td>
+            <td><label for="nombreforms">Your email</label></td>
+          </th>
+        
+          <th>
+            <td><input
+              type="text"
+              id="nombreforms"
+              name="nombreforms"
+              required="required"
+            /></td>
+          </th>
+        </table>
         <button type="button">Send Message</button>
       </aside>
     </section>

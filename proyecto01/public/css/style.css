@@ -12,14 +12,43 @@
     --color-o-3: #bfc3f6;
 }
 
+h1,
+h2 {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+#username,
+#bar a {
+    font-family: "Roboto Mono", monospace;
+}
+
 section {
     height: 100vh;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #social-media {
+        display: none;
+    }
+}
+
 /* Header */
+
 #bar {
     margin: 2rem;
     margin-right: 3rem;
+}
+
+#bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    list-style-type: none;
+    display: flex;
 }
 
 #bar a {
@@ -27,7 +56,9 @@ section {
     font-weight: 600;
     padding-left: 1.5rem;
 }
+
 /*Social Media */
+
 #social-media {
     position: fixed;
     top: calc(50% - 4rem);
@@ -41,6 +72,7 @@ section {
 }
 
 /*Home*/
+
 #home {
     height: 100vh;
     display: flex;
@@ -98,9 +130,20 @@ section {
 }
 
 /*About */
-#about {
+#about{
     background-color: var(--color-1);
+    display: grid;
+    padding: 3rem;
+    gap: 2rem;
+    grid-template-columns: 2fr 2fr;
 }
+
+#profile-image{
+    
+}
+
+
+
 
 /*Skills*/
 #skills {
@@ -120,26 +163,4 @@ section {
 /*Footer*/
 footer {
     background-color: var(--color-2);
-}
-
-h1,
-h2 {
-    font-family: "Poppins", sans-serif;
-}
-
-#username,
-#bar a {
-    font-family: "Roboto Mono", monospace;
-}
-
-#bar a {
-    text-decoration: none;
-}
-
-#nav-bar #bar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    list-style-type: none;
-    display: flex;
 }
