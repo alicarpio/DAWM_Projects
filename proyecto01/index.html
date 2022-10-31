@@ -1,225 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Alina's profile</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
 
     <!--Google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap"
+      rel="stylesheet"
+    />
 
     <!--Css-->
-    <link type="text/css" rel="stylesheet" href="./public/css/style.css"/>
-</head>
+    <link type="text/css" rel="stylesheet" href="./public/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="./public/css/layout.css" />
+  </head>
 
-<body>
-<header>
-    <nav id="nav-bar">
+
+  <body>
+    <header>
+      <nav id="nav-bar">
         <ul id="bar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" class="background-box">Home</a></li>
+          <li><a href="#about" class="background-box">About</a></li>
+          <li><a href="#skills" class="background-box">Skills</a></li>
+          <li><a href="#work" class="background-box">Work</a></li>
+          <li><a href="#contact" class="background-box">Contact</a></li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<aside id="social-media">
-    <ul>
-        <li>
-            <a href="https://github.com/alicarpio"><i class="fa-brands fa-github"></i></a>
-        </li>
-        <li>
-            <a href="https://twitter.com/Ally1997_"><i class="fa-brands fa-twitter"></i></a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/alina-carpio-758bb220b/"><i class="fa-brands fa-linkedin-in"></i></a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/ally.1997_/?next=%2F"><i class="fa-brands fa-instagram"></i></a>
-        </li>
-    </ul>
-</aside>
+    <main>
+      <div id="hamburger">
+        <i class="fa fa-bars hamburger-icon"></i>
+      </div>
 
-<section id="home">
-    <img src="/public/images/background.jpg"/>
-    <h2 id="username">&lt;Alina/&gt;</h2>
-    <div id="home-info">
-        <h1>ALINA CARPIO</h1>
-        <h2>UNIVERSITY STUDENT IN COMPUTER SCIENCE AT ESPOL.</h2>
-    </div>
-    <a href="#about">
-        <div id="slide-down">
+      <aside id="social-media">
+        <ul>
+          <li>
+            <a href="https://github.com/alicarpio"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/Ally1997_"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/alina-carpio-758bb220b/"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/ally.1997_/?next=%2F"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+        </ul>
+      </aside>
+
+      <section id="home">
+        <img src="/public/images/background.jpg" />
+        <span id="username">
+          <span class="tag-user style-user">&lt;</span
+          ><span id="user" class="style-user">Alina</span
+          ><span class="tag-user style-user">/&gt;</span>
+        </span>
+        <div id="home-info">
+          <h1>ALINA CARPIO</h1>
+          <h2>UNIVERSITY STUDENT IN COMPUTER SCIENCE AT ESPOL.</h2>
+        </div>
+        <a href="#about">
+          <div id="slide-down">
             <i class="fa-solid fa-angle-down"></i>
             <i class="fa-solid fa-angle-down"></i>
-        </div>
-    </a>
-</section>
+          </div>
+        </a>
+      </section>
 
+      <section id="about">
+        <article id="about-content">
+          <div id="about-info">
+            <div class="title-line">
+              <h2>About me</h2>
+              <hr />
+            </div>
+  
+            <div id="bubble-dialog">Hi it's me</div>
+            <h2 class="name-about">Alina</h2>
+            <p>
+              Lorem ipsum dolor sit amet. Ex explicabo quod aut soluta iusto et enim
+              quaerat quo voluptas delectus aut nisi quia? Et commodi explicabo sed
+              voluptas modi non rerum iure! Et maiores molestiae sit voluptas
+              voluptatem sed iusto nihil nam doloribus voluptas nam labore beatae
+              qui dicta consequatur ut maiores mollitia.
+            </p>
+            <div id="contact-container">
+              <div id="contact-circle">
+                <a href="#contact" id="circle-content">let's talk</a>
+              </div>
+            </div>
+          </div>
+  
+          <figure id="profile-image">
+            <div id="border-profile-image"></div>
+            <img
+            src="./public/images/profilePhoto.jpeg"
+            alt="Profile photo"
+            width="400"
+            height="425"
+          />
+          </figure>
+        </article>
+       
+      </section>
 
-<section id="about">
-    <div id="about-info">
-        <h2>About me</h2>
-        <div id="bubble-dialog">Hi it's me</div>
-        <h2>Alina</h2>
-        <p>
-            Lorem ipsum dolor sit amet. Ex explicabo quod aut soluta iusto et enim
-            quaerat quo voluptas delectus aut nisi quia? Et commodi explicabo sed
-            voluptas modi non rerum iure! Et maiores molestiae sit voluptas
-            voluptatem sed iusto nihil nam doloribus voluptas nam labore beatae
-            qui dicta consequatur ut maiores mollitia.
-        </p>
-        <div id="contact-container">
-            <div id="contact-botton"></div>
-            <div id="contact-botton-info"></div>
-            <a href="#contact" id="info-contact">let's talk</a>
-        </div>
-    </div>
-
-
-    <figure id="profile-image">
-        <img src="./public/images/profilePhoto.jpeg" alt="Profile photo" width="400" height="425"/>
-        <div id="border-image">
-        </div>
-    </figure>
-</section>
-
-<!-- <div class="music-player">
-      <i class="fa-solid fa-volume"
-        ><audio controls="yes" autoplay>
+    <div id="audio">
+      <i class="fa-solid fa-volume-low audio-icon"><audio autoplay>
           <source
             src="./public/media/The Killers - Mr. Brightside (piano).mp3"
             type="audio/mpeg"
           /></audio
       ></i>
-    </div> -->
+    </div>
 
-<section id="skills">
-    <h2 class="subtitle">Skills</h2>
-    <div class="card-wrapper">
-        <div class="skill-card">
-            <i class="fa-brands fa-js icons-skills"></i>
-            <p>
+      <section id="skills">
+        <div id="skills-title">
+          <h2 class="subtitle">Skills</h2>
+          <hr />
+        </div>
+
+        <div class="card-wrapper">
+            <div class="skill-card">
+              <i class="fa-brands fa-js icons-skills"></i>
+              <p>
                 Lorem ipsum dolor sit amet. Ex explicabo quod aut soluta iusto et
                 enim quaerat quo voluptas delectus aut nisi quia? Et commodi
                 explicabo sed voluptas modi non rerum iure!
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-brands fa-python icons-skills"></i>
-            <p>
-                Lorem ipsum dolor sit amet. Ex explicabo
-                quod aut soluta iusto et
-                enim quaerat quo voluptas delectus
-                aut nisi quia? Et commodi
-                explicabo sed voluptas modi non rerum iure!
-            </p>
-        </div>
-        <div class="skill-card">
-            <i class="fa-brands fa-java icons-skills"></i>
-            <p>
+              </p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-python icons-skills"></i>
+              <p>
                 Lorem ipsum dolor sit amet. Ex explicabo quod aut soluta iusto et
                 enim quaerat quo voluptas delectus aut nisi quia? Et commodi
                 explicabo sed voluptas modi non rerum iure!
-            </p>
-        </div>
-        <div class="skill-card">
-            <i class="fa-solid fa-c icons-skills"></i>
-            <p>
+              </p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-java icons-skills"></i>
+              <p>
                 Lorem ipsum dolor sit amet. Ex explicabo quod aut soluta iusto et
                 enim quaerat quo voluptas delectus aut nisi quia? Et commodi
                 explicabo sed voluptas modi non rerum iure!
-            </p>
-        </div>
-    </div>
-</section>
+              </p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-c icons-skills"></i>
+              <p>
+                Lorem ipsum dolor sit amet. Ex explicabo quod aut soluta iusto et
+                enim quaerat quo voluptas delectus aut nisi quia? Et commodi
+                explicabo sed voluptas modi non rerum iure!
+              </p>
+            </div>
 
-<section id="work">
-    <h2 class="subtitle">My works</h2>
-    <h3>Some of my projects</h3>
-    <div class="work-card-wrapper">
-        <div class="work-card">
-            <a href="https://github.com/alicarpio/ToDoListApp" target="_blank"><img src="./public/images/todosWork.png"
-                                                                                    alt="Work 1" width="390"
-                                                                                    height="230"/></a>
-        </div>
-        <div class="work-card">
-            <a href="https://github.com/alicarpio/prototipo-ihc" target="_blank"><img
-                    src="./public/images/prototipo-ihc.png" alt="Prototipo-IHC" width="390" height="230"/></a>
-        </div>
-        <div class="work-card">
-            <a href="https://github.com/alicarpio/DAWM_Projects/tree/master/proyecto01" target="_blank"><img
-                    src="/public/images/portafolio2022.png" alt="Portafolio" width="390" height="230"/></a>
-        </div>
-        <div class="work-card">
-            <a href="https://gist.github.com/MFaFH/6031298" target="_blank"><img src="./public/images/calculator.png"
-                                                                                 alt="C-project" width="390"
-                                                                                 height="230"/></a>
-        </div>
-    </div>
-</section>
 
-<!--TODO-Form with table-->
-<section id="contact">
-    <div id="contact-info">
-        <h2 class="subtitle">Contact me</h2>
-        <h3>Get in touch</h3>
-        <b>Adress: </b><span>Guayaquil, Ecuador</span>
-        <br/>
-        <b>Email: </b><span>carpioalinaa@gmail.com</span>
-        <br/>
-        <b>Phone: </b><span>+593 960 774 778</span>
-    </div>
+        </section>
+        
+          
+    
+      <section id="work">
+        <div id="work-title">
+          <h2 class="subtitle">My works</h2>
+          <h3>Some of my projects</h3>
+          <hr />
+        </div>
 
-    <aside id="form-contact">
-        <table id="form">
-            <tr>
-                <td><label for="nombreforms">Your name</label></td>
-            </tr>
-            <tr>
-                <td><input type="text" id="nombreforms" name="nombreforms" required="required"/></td>
-            </tr>
-            <tr>
-                <td><label for="email">Your email</label></td>
-            </tr>
-            <tr>
-                <td><input type="text" id="email" name="email" required="required"/></td>
-            </tr>
-            <tr>
-                <td><label for="message">Your message</label></td>
-            </tr>
-            <tr>
-                <td><textarea id="message" name="message" rows="10" cols="50"></textarea></td>
-            </tr>
-        </table>
-        <button type="button">SEND MESSAGE</button>
-    </aside>
-</section>
-<!--TODO-how i can put the social media-->
-<footer>
-    <i class="fa-solid fa-envelope"></i><span>carpioalinaa@gmail.com</span>
-    <br/>
-    <i class="fa-solid fa-location-dot"></i><span>Guayaquil, Ecuador</span>
-    <aside>
-        <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.12956409533!2d-79.90089767712344!3d-2.1035903935618934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d12b795d5e857%3A0x88abfac5acffb211!2sParque%20Samanes.!5e0!3m2!1ses-419!2sec!4v1665944259052!5m2!1ses-419!2sec"
-                width="400" height="300" style="border: 0" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </aside>
-    <hr/>
-    <i class="fa-regular fa-copyright"></i><span>Alina Carpio 2022</span>
-</footer>
-</body>
+        <div class="work-card-wrapper">
+          <div class="work-card">
+            <a href="https://github.com/alicarpio/ToDoListApp" target="_blank"
+              ><img
+                src="./public/images/todosWork.png"
+                alt="Work 1"
+                width="390"
+                height="230"
+            /></a>
+          </div>
+          <div class="work-card">
+            <a href="https://github.com/alicarpio/prototipo-ihc" target="_blank"
+              ><img
+                src="./public/images/prototipo-ihc.png"
+                alt="Prototipo-IHC"
+                width="390"
+                height="230"
+            /></a>
+          </div>
+          <div class="work-card">
+            <a
+              href="https://github.com/alicarpio/DAWM_Projects/tree/master/proyecto01"
+              target="_blank"
+              ><img
+                src="/public/images/portafolio2022.png"
+                alt="Portafolio"
+                width="390"
+                height="230"
+            /></a>
+          </div>
+          <div class="work-card">
+            <a href="https://gist.github.com/MFaFH/6031298" target="_blank"
+              ><img
+                src="./public/images/calculator.png"
+                alt="C-project"
+                width="390"
+                height="230"
+            /></a>
+          </div>
+        </div>
+      </section>
 
+      <section id="contact">
+        <div id="title-contact">
+          <h2 class="subtitle">Contact Me</h2>
+          <h3>Get in touch</h3>
+          <hr/>
+        </div>
+
+        <div id="info-contact-table">
+          <table id="contact-info">
+            <tr>
+              <th>Adress:</th>
+              <td> Guayaquil,Ecuador</td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td> carpioalinaa@gmail.com</td>
+            </tr>
+            <tr>
+              <th>Phone:</th>
+              <td> +593 960 774 778</td>
+            </tr>
+          </table>  
+        </div>
+        
+        <form id="form-contact">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required="required"/>
+          <br>
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" required="required"/>
+          <br>
+          <label for="message">Message</label>
+          <textarea id="message"></textarea>
+          <br>  
+          <button>Send Message</button>
+        </form>
+      </section>
+    </main>
+    
+    <footer>
+      <div id="footer-info">
+        <div id="footer-contact">
+          <i class="fa-solid fa-envelope"></i
+          ><span> carpioalinaa@gmail.com</span>
+          <br />
+          <i class="fa-solid fa-location-dot"></i
+          ><span> Guayaquil, Ecuador</span>
+        </div>
+
+
+        <div id="footer-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.12956409533!2d-79.90089767712344!3d-2.1035903935618934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d12b795d5e857%3A0x88abfac5acffb211!2sParque%20Samanes.!5e0!3m2!1ses-419!2sec!4v1665944259052!5m2!1ses-419!2sec"
+            width="300"
+            height="310"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <hr/>
+      <div id="copyright">
+        <i class="fa-regular fa-copyright"></i><span> Alina Carpio 2022</span>
+      </div>
+    </footer>
+  </body>
 </html>
