@@ -127,31 +127,25 @@
     }
 
     #contact {
-        display: flex;
+        padding: 0 2rem;
+        
+    }
+
+    #contact div:nth-child(2) {
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        background-color: var(--color-2);
-        height: 90%;
+        gap: 4rem;
     }
 
     #form-contact {
-        display: flex;
-        flex-direction: column;
         width: 70%;
     }
 
     #form-contact input,
     textarea {
-        border-top-style: hidden;
-        border-right-style: hidden;
-        border-left-style: hidden;
-        box-shadow: none;
-        border-bottom-style: groove;
-        background-color: var(--color-2);
         font-size: 15px;
     }
+
 
     th,
     td {
@@ -171,6 +165,4 @@
         max-width: 90%;
         justify-content: flex-start;
     }
-
-
 }

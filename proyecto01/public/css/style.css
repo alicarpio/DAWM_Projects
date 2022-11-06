@@ -374,21 +374,24 @@ section {
 /*Contact*/
 #contact {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
     background-color: var(--color-2);
-    height: 90%;
+}
+
+#contact div:nth-child(2) {
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    min-width: 100%;
 }
 
 #title-contact {
-    flex: 1 0 100%;
-    width: 50%;
-    transform: translateX(12%);
+    min-width: 100%;
     margin-top: 1.5rem;
-    
+    padding: 1.5rem;
 }
 
-#title-contact hr{
+#title-contact hr {
     width: 50%;
 }
 
@@ -406,7 +409,7 @@ section {
     width: 30%;
 }
 
-#form-contact input textarea:focus{
+#form-contact input textarea:focus {
     outline: none;
 }
 
@@ -430,14 +433,11 @@ textarea {
     margin-bottom: 5rem;
 }
 
-
 th,
 td {
     font-family: "Roboto Mono", monospace;
     padding: 8px;
 }
-
-
 
 button {
     background-color: var(--color-botton);
