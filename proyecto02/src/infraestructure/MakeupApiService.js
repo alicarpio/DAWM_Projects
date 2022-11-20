@@ -2,7 +2,7 @@ import MakeupService from "./MakeupService.js";
 import createMU from "/src/domain/Makeup.js";
 
 
-const URL = "http://makeup-api.herokuapp.com/api/v1/products.json";
+const URL = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl";
 
 export default class MakeupApiService extends MakeupService {
     #makeupData;
@@ -16,11 +16,14 @@ export default class MakeupApiService extends MakeupService {
         displayLoading()
         console.log('cargando')
         const resp = await fetch(URL);
+        console.log(resp)
         const datos = await resp.json();
+        console.log(datos)
         hideLoading()
         console.log('cargando 2')
         sectionMakeupProduct.style.display = 'block';
         datos.forEach((mp) => {
+            console.log(mp['image_link'].ok)
             const makeup = new createMU({
                 id: mp["id"],
                 brand: mp["brand"],
@@ -38,10 +41,24 @@ export default class MakeupApiService extends MakeupService {
         });
         return this.#makeupData;
     }
+
+    findbyName(brandName) {
+        const makeupsByBrand = [];
+        const textSerch = document.getElementById('search-input').value;
+
+        for (const [_, makeup] of this.#makeupData) {
+            if(makeup['brand'].toString().includes(brandName)){
+                makeupsByBrand.push(makeup)
+            }
+        }
+
+        return makeupsByBrand;
+
+    }
 }
 
-const sectionMakeupProduct = document.querySelector( "#makeupProducts")
-const loader = document.querySelector( "#loading")
+const sectionMakeupProduct = document.querySelector("#makeupProducts")
+const loader = document.querySelector("#loading")
 
 function displayLoading() {
     loader.classList.add("display");
@@ -56,3 +73,7 @@ function hideLoading() {
     loader.classList.remove("display");
     loader.style.display = 'none'
 }
+
+
+
+
