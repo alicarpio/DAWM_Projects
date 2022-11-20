@@ -22,13 +22,12 @@ const cargarMakeup = async () => {
             tag_list: mp["tag_list"],
         });
         makeups.set(mp["id"], makeup);
-        // console.log(typeof(mp['id']))
     });
-    // let ii = 1;
-    // console.log(makeups.get(8)['image_link']);
+
 
     let i = 1;
     const cardImgs = document.querySelectorAll('img')
+    const va
     const loadImage = () => {
         console.log(cardImgs)
         cardImgs.forEach((imgTag) => {
