@@ -9,36 +9,43 @@ const main = async () => {
     const makeupService = new MakeupApiService();
     const makeupsInfo = await makeupService.getAllProducts();
 
-    for (const [_, makeup] of makeupsInfo) {
-        addProductCard({
-            imageLink: makeup['image_link'],
-            makeupName: makeup['name'],
-            price: makeup['price'],
-            brand: makeup['brand'].toString().toUpperCase(),
-            category: makeup['category'].toString() === 'none'
-                ? makeup['product_type'].toString()
-                : makeup['category'].toString()
-
-        })
-    }
-
-    let enterEvent;
-    let clickEvent;
-
-    searchInput.addEventListener('keyup',(e)=>{
-            enterEvent = e;
-    })
-    searchInput.addEventListener('click',(e)=>{
-        clickEvent = e;
+    [...makeupsInfo.values()].map(product => {
+        productsContainer.innerHTML += createProductCard(product)
     })
 
-    if(enterEvent || clickEvent){
 
-    }
+
+    searchIcon.addEventListener('click', (e) => {
+        addProductsByName(e);
+
+    })
+
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            addProductsByName(e);
+        }
+    })
 }
 
-function addProductCard({imageLink, makeupName, price, brand, category}) {
-    let template = `<div class="col mb-5 product">
+function addProductsByName(event) {
+    event.preventDefault()
+    const name = document.getElementById('search-input').value;
+    const productsByName = makeupService.findbyName(name)
+    productsContainer.innerHTML = ''
+    productsByName
+        .map(product => createProductCard(product))
+        .forEach(productCard => productsContainer.innerHTML += productCard)
+}
+
+function createProductCard(makeup) {
+    const imageLink = makeup['image_link']
+    const makeupName = makeup['name']
+    const price = makeup['price']
+    const brand = makeup['brand'].toString().toUpperCase()
+    const category = makeup['category'].toString() === 'none'
+        ? makeup['product_type'].toString()
+        : makeup['category'].toString()
+    return `<div class="col mb-5 product">
                 <div class="card h-100">
                     <!-- Product image-->
                     <img
@@ -81,11 +88,7 @@ function addProductCard({imageLink, makeupName, price, brand, category}) {
                     </div>
                 </div>
             </div>`
-
-    productsContainer.innerHTML += template;
-
 }
-
 
 main();
 

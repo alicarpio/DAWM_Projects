@@ -42,18 +42,16 @@ export default class MakeupApiService extends MakeupService {
         return this.#makeupData;
     }
 
-    findbyName(brandName) {
+    findbyName(name) {
         const makeupsByBrand = [];
-        const textSerch = document.getElementById('search-input').value;
 
         for (const [_, makeup] of this.#makeupData) {
-            if(makeup['brand'].toString().includes(brandName)){
+            if(makeup['name'].toLowerCase().includes(name)){
                 makeupsByBrand.push(makeup)
             }
         }
 
         return makeupsByBrand;
-
     }
 }
 
