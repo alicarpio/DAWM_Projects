@@ -12136,6 +12136,18 @@ fieldset:disabled .btn {
     }
 }
 
+@media (max-width: 575px) {
+    h5{
+      font-size: 1.25rem;   
+    }
+}
+
+@media (max-width: 575px) {
+    span{
+      font-size: 1rem;   
+    }
+}
+
 @media print {
     .d-print-inline {
         display: inline !important;
@@ -12177,8 +12189,9 @@ fieldset:disabled .btn {
         display: none !important;
     }
 
-
 }
+
+
 
 #makeupProducts {
     display: none;

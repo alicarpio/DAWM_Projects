@@ -36,7 +36,7 @@ const productsByTag = await apiService.getProductsByTag();
 const productTags = productsByTag.map(([tag, _]) => tag);
 const productTagNumbers = productsByTag.map(([_, n]) => n);
 
-console.log(productsByTag);
+
 new Chart(statsRanking, {
   type: "polarArea",
   data: {
