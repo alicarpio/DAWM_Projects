@@ -41,7 +41,7 @@ const main = async () => {
     }
   });
 
-  updateCart();
+
 };
 
 async function addProductsByName(event) {
@@ -54,17 +54,7 @@ async function addProductsByName(event) {
     .forEach((productCard) => (productsContainer.innerHTML += productCard));
 }
 
-function updateCart() {
-  let count;
-  const addToCart = document.getElementsByClassName("add-to-cart");
-  const countCart = document.getElementById("count-cart");
-  addToCart.forEach((c) => {
-    c.addEventListener("click", () => {
-      count+=1;
-      countCart.innerHTML = count;
-    });
-  });
-}
+
 
 function createProductCard(makeup) {
   const imageLink = makeup["image_link"];
