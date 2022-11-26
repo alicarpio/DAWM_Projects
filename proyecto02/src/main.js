@@ -40,6 +40,8 @@ const main = async () => {
       addProductsByName(e);
     }
   });
+
+  updateCart();
 };
 
 async function addProductsByName(event) {
@@ -50,6 +52,18 @@ async function addProductsByName(event) {
   productsByName
     .map((product) => createProductCard(product))
     .forEach((productCard) => (productsContainer.innerHTML += productCard));
+}
+
+function updateCart() {
+  let count;
+  const addToCart = document.getElementsByClassName("add-to-cart");
+  const countCart = document.getElementById("count-cart");
+  addToCart.forEach((c) => {
+    c.addEventListener("click", () => {
+      count+=1;
+      countCart.innerHTML = count;
+    });
+  });
 }
 
 function createProductCard(makeup) {
@@ -97,7 +111,7 @@ function createProductCard(makeup) {
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
-                            <a class="btn btn-outline-dark mt-auto" href="#"
+                            <a class="btn btn-outline-dark mt-auto add-to-cart" href="#"
                             >Add to cart</a
                             >
                         </div>
