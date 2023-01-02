@@ -10,7 +10,7 @@
   <meta name="author" content="" />
   <title>MakeUp Shop</title>
   <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="public/assets/favicon.ico" />
+<!--  <link rel="icon" type="image/x-icon" href="public/assets/favicon.ico" />-->
   <!-- Bootstrap icons-->
   <link
     href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -41,7 +41,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container px-4 px-lg-5">
-    <a class="navbar-brand" href="./index.html">Ali's makeup store</a>
+    <a class="navbar-brand" [routerLink]="['/shop']">Ali's makeup store</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -56,12 +56,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./index.html"
+          <a class="nav-link active" aria-current="page" [routerLink]="['/shop']"
           >Home</a
           >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#!">Stats</a>
         </li>
       </ul>
 
@@ -95,7 +92,46 @@
     <div
       id="products-container"
       class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
-    ></div>
+    >
+
+      <div class="col mb-5 product" *ngFor="let product of makeups">
+        <div class="card h-100">
+          <!-- Product image-->
+          <img
+            class="card-img-top"
+            src="{{product.image_link}}"
+            alt="..."
+          />
+          <!-- Product details-->
+          <div class="card-body p-4">
+            <div class="text-center">
+              <h5 class="fw-bolder brand">{{product.brand}}</h5>
+              <!-- Product name-->
+              <h5 class="fw-bolder name">{{product.name}}</h5>
+              <!-- Product reviews-->
+              <div class="d-flex justify-content-center small text-warning mb-2">
+<!--                ${stars}-->
+              </div>
+              <!-- product category -->
+              <div class="text-xl-left">
+                <span class="fw-bolder h5">Category:</span>
+                <span class="category h5">{{product.category}}</span>
+              </div>
+              <!-- Product price-->
+              <span class="price">{{product.price}}</span>
+            </div>
+          </div>
+          <!-- Product actions-->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center">
+              <a class="btn btn-outline-dark mt-auto add-to-cart" href="#"
+              >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <!-- Footer-->
