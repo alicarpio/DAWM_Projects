@@ -1,0 +1,19 @@
+.category{
+  font-size: 0.96rem;
+  font-weight: normal;
+}
+
+.category-title{
+  font-size: medium;
+
+}
+
+.brand{
+  font-size: x-large;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
