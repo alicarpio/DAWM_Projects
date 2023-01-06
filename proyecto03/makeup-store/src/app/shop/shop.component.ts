@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MakeupProduct} from '../makeup-product'
 import {CartService} from "../service/cart.service";
 
@@ -7,8 +7,9 @@ import {CartService} from "../service/cart.service";
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
-export class ShopComponent {
+export class ShopComponent implements OnInit{
   makeups!: MakeupProduct[]
+  public totalItem: number =0;
 
   constructor(private cartService: CartService) {
     let makeupData = JSON.parse(localStorage.getItem("makeupData")!);
@@ -18,7 +19,17 @@ export class ShopComponent {
     }
   }
 
-  // addToCart(){
-  //   this.cartService.addToCart(this.makeups)
-  // }
+  ngOnInit():void {
+    this.makeups.forEach((a:any)=>{
+      Object.assign(a,{quantity:1,total:a.price});
+    })
+
+    this.cartService.getProducts().subscribe(res=>{
+      this.totalItem = res.length
+    })
+  }
+
+  addToCart(item:any){
+    this.cartService.addToCart(item);
+  }
 }

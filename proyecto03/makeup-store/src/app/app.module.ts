@@ -16,13 +16,14 @@ import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ShopComponent,
     ProductInfoComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule,

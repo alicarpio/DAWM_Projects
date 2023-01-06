@@ -30,4 +30,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate([`${pageName}`]);
     }
   }
+
+  addUser():string{
+    return this.username;
+  }
 }

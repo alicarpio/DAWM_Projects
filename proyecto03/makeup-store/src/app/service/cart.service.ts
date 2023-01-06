@@ -1,26 +1,47 @@
 import {Injectable} from '@angular/core';
 import {Cart} from "../../shared/models/Cart";
 import {Makeup} from "../../shared/models/Makeup";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  private cart: Cart = new Cart();
+  public cartItemList: any = []
+  public productList = new BehaviorSubject<any>([]);
 
   constructor() {
   }
 
-  // addToCart(makeup: Makeup): void {
-  //   let cartItem = this.cart.items.find((item) => item.makeup.id === makeup.id)
-  //   if (cartItem) {
-  //     this.changeQuantity(makeup.id, cartItem.quantity + 1)
-  //     return
-  //   }
-  //   this.cart.items.push(new cartItem(makeup))
-  // }
+  getProducts() {
+    return this.productList.asObservable()
+  }
+  setProduct(product: any){
+    this.cartItemList.push(...product);
+    this.productList.next(product)
+  }
 
-  getCart():Cart{
-    return this.cart
+  addToCart(product:any){
+    this.cartItemList.push(product);
+    this.productList.next(this.cartItemList);
+    this.getTotalPrice();
+    console.log(this.cartItemList)
+  }
+
+  getTotalPrice():number{
+    let grandTotal = 0;
+    this.cartItemList.map((a:any)=>{
+      grandTotal += a.total;
+    })
+    return grandTotal;
+  }
+
+  removeCartItem(product:any){
+    this.cartItemList.map((a:any, index:any)=>{
+      if(product.id === a.id){
+        this.cartItemList.splice(index,1);
+      }
+    })
+
   }
 }
