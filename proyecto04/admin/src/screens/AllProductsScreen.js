@@ -1,26 +1,27 @@
 import React, {useEffect, useState} from "react";
-import { MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import {MDBBadge, MDBTable, MDBTableBody, MDBTableHead} from 'mdb-react-ui-kit';
 import {useParams} from "react-router-dom";
-import ShippedProductInfo from "../components/ShippedProductInfo";
+import AllProductsInfo from "../components/AllProductsInfo";
 
-const ShippedProductScreen = () => {
-    const [sales, setSales] = useState([])
-    const params = useParams()
-    const customerNumber = params.customerNumber;
+const AllProductsScreen = () => {
+    const [allSales, setAllSales] = useState([])
+    const params = useParams();
+    const customerNumber = params.customerNumber
+    console.log(customerNumber)
     let total = 0;
 
     useEffect(() => {
-        const fetchSales = async () => {
-            const res = await fetch(`http://localhost:3080/sales/shippedProducts/${customerNumber}`)
+        const fetchAllSales = async () => {
+            const res = await fetch(`http://localhost:3080/sales/allProducts/${customerNumber}/json`)
             const getdata = await res.json();
-            setSales(getdata)
-            console.log(getdata)
+            setAllSales(getdata);
         }
-        fetchSales()
+        fetchAllSales()
     }, []);
+    console.log(allSales, 'outside')
 
-    console.log(sales)
-    {sales.map((sale) =>(total+= (sale.quantityOrdered*sale.quantityOrdered)))}
+    allSales.map((sale) => (total += (sale.quantityOrdered * sale.quantityOrdered)))
+
 
     return (
         <>
@@ -37,8 +38,8 @@ const ShippedProductScreen = () => {
                     </tr>
                 </MDBTableHead>
                 <MDBTableBody>
-                    {sales.map((sale) =>(
-                            <ShippedProductInfo sale={sale}/>
+                    {allSales.map((sale) => (
+                        <AllProductsInfo sale={sale}/>
                     ))}
                     <tr>
                         <td className='secondary'>Total</td>
@@ -54,4 +55,4 @@ const ShippedProductScreen = () => {
     )
 }
 
-export default ShippedProductScreen
+export default AllProductsScreen

@@ -2,8 +2,7 @@ import React from "react";
 
 import {MDBBadge,} from 'mdb-react-ui-kit';
 
-
-const ShippedProductInfo = ({sale}) => {
+const AllProductsInfo = ({sale}) => {
     return (
         <tr>
             <td>1</td>
@@ -15,7 +14,9 @@ const ShippedProductInfo = ({sale}) => {
             <td align='middle'>{sale.quantityOrdered}</td>
             <td>${sale.priceEach}</td>
             <td>
-                <MDBBadge color='success' pill>
+                <MDBBadge
+                    color={sale.status === 'Shipped' ? 'success' : sale.status === 'In Process' ? 'warning' : 'danger'}
+                    pill>
                     {sale.status}
                 </MDBBadge>
             </td>
@@ -23,4 +24,4 @@ const ShippedProductInfo = ({sale}) => {
     )
 }
 
-export default ShippedProductInfo
+export default AllProductsInfo
