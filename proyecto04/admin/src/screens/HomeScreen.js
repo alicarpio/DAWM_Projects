@@ -11,12 +11,11 @@ const HomeScreen = () => {
             const res = await fetch('http://localhost:5000/customers/findAll/json')
             const getdata = await res.json();
             setCustomers(getdata);
-            console.log('hey inside',(getdata))
         }
         fetchCustomers()
 
     }, []);
-    console.log('hey outside', Object.values(customers))
+
     return (
         <>
             <h1>Customer Data</h1>

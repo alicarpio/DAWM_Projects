@@ -3,6 +3,7 @@ import {Container} from 'react-bootstrap'
 import Header from "./components/Header";
 import HomeScreen from "./screens/HomeScreen";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import ShippedProductScreen from "./screens/ShippedProductScreen";
 
 const App = () => {
     return (
@@ -12,7 +13,7 @@ const App = () => {
                 <Container>
                     <Routes>
                         <Route path='/' element={<HomeScreen/>} exact ></Route> // See exact for routing v6
-                        {/*<Route path='/customer/:customerNumber' element={<ShippedProductScreen/>}></Route>*/}
+                        <Route path='customer/:customerNumber' element={<ShippedProductScreen/>}></Route>
                     </Routes>
                 </Container>
             </main>

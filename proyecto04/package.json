@@ -1,0 +1,25 @@
+{
+  "name": "proyecto04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node api-sales/server",
+    "server1": "nodemon api-usuarios/bin/www",
+    "server2": "nodemon api-sales/server",
+    "client": "npm start --prefix admin",
+    "dev": "concurrently \"npm run server1\" \"npm run server2\" \"npm run client\""
+  },
+  "author": "ALINA",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^6.9.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  }
+}

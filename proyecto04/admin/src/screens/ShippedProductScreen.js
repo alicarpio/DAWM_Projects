@@ -1,38 +1,44 @@
-import React from "react";
-import {Table} from "react-bootstrap";
+import React, {useEffect, useState} from "react";
+import { MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import {useParams} from "react-router-dom";
+import ShippedProductInfo from "../components/ShippedProductInfo";
 
-const ShippedProductScreen = () => {
+const ShippedProductScreen = ({match}) => {
+    const [sales, setSales] = useState([])
+    const params = useParams()
+    const customerNumber = params.customerNumber;
+
+    useEffect(() => {
+        const fetchSales = async () => {
+            const res = await fetch(`http://localhost:3080/sales/shippedProducts/${customerNumber}`)
+            const getdata = await res.json();
+            setSales(getdata);
+            console.log('hey inside', (getdata))
+        }
+        fetchSales()
+    }, []);
+
     return (
         <>
-            <Table striped bordered hover>
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td colSpan={2}>Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </Table>
+            <MDBTable align='middle'>
+                <MDBTableHead>
+                    <tr>
+                        <th scope='col'>#</th>
+                        <th scope='col'>Product Name</th>
+                        <th scope='col'>Order Date</th>
+                        <th scope='col'>Product Code</th>
+                        <th scope='col'>Quantity Ordered</th>
+                        <th scope='col'>Price Each</th>
+                        <th scope='col'>Status</th>
+                    </tr>
+                </MDBTableHead>
+                <MDBTableBody>
+                    {sales.map((sale) =>(
+                            <ShippedProductInfo sale={sale}/>
+                    ))}
+
+                </MDBTableBody>
+            </MDBTable>
         </>
     )
 }
